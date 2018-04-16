@@ -169,23 +169,6 @@ void App::Render()
     float clearColor[4] = { 0.0f, 0.125f, 0.3f, 1.0f }; // red, green, blue, alpha
     m_Context->ClearRenderTargetView(m_RenderTargetView.Get(), clearColor);
 
-    // 入力レイアウトに頂点バッファを設定
-    UINT stride = sizeof(Vertex_PositionColor);
-    UINT offset = 0;
-
-    ID3D11Buffer* pVertexBuffers[] = {
-        m_VertexBuffer.Get()
-    };
-
-    m_Context->IASetVertexBuffers(
-        0,
-        1,
-        pVertexBuffers,
-        &stride,
-        &offset
-    );
-    m_Context->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
-
     m_Pipeline->Bind();
     m_Context->Draw(_countof(g_vertices), 0);
 
@@ -290,6 +273,22 @@ bool App::CreateVertexBuffer()
             &m_VertexBuffer
         )
     );
+
+    // 入力レイアウトに頂点バッファを設定
+    UINT stride = sizeof(Vertex_PositionColor);
+    UINT offset = 0;
+
+    ID3D11Buffer* pVertexBuffers[] = {
+        m_VertexBuffer.Get()
+    };
+    m_Context->IASetVertexBuffers(
+        0,
+        1,
+        pVertexBuffers,
+        &stride,
+        &offset
+    );
+    m_Context->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
     return true;
 }

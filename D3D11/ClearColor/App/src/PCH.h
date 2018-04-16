@@ -14,6 +14,7 @@
 #include <wrl.h>
 
 
+#define _HAS_ITERATOR_DEBUGGING     0
 #include <cassert>
 #include <string>
 #include <sstream>
