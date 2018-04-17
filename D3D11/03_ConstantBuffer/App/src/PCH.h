@@ -4,6 +4,12 @@
 #include <wrl.h>
 
 
+#define EIGEN_NO_DEBUG 1 // コード内のDAssertを無効化
+#include <Eigen/Core>
+#include <Eigen/Geometry>
+#include <Eigen/StdVector>
+
+
 // プリコンパイル済みヘッダー
 
 #if defined(DEBUG) || defined(_DEBUG)
@@ -35,6 +41,7 @@
 #endif
 
 #include <cassert>
+#include <cmath>
 #include <string>
 #include <sstream>
 #include <memory>

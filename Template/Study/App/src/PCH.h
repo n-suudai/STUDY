@@ -13,12 +13,16 @@
 #include <d3d11.h>
 
 
-#define _HAS_ITERATOR_DEBUGGING     0
+#if _HAS_ITERATOR_DEBUGGING > 0
+#   undef _HAS_ITERATOR_DEBUGGING
+#   define _HAS_ITERATOR_DEBUGGING  0
+#endif
+
 #include <cassert>
 #include <string>
 #include <memory>
 
 
-#include "App.h"
 #include "AppException.h"
+#include "App.h"
 

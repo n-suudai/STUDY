@@ -14,7 +14,11 @@
 #include <wrl.h>
 
 
-#define _HAS_ITERATOR_DEBUGGING     0
+#if _HAS_ITERATOR_DEBUGGING > 0
+#   undef _HAS_ITERATOR_DEBUGGING
+#   define _HAS_ITERATOR_DEBUGGING  0
+#endif
+
 #include <cassert>
 #include <string>
 #include <sstream>
