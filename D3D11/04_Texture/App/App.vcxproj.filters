@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\AppMain.cpp" />
+    <ClCompile Include="src\PCH.cpp" />
+    <ClCompile Include="src\App.cpp" />
+    <ClCompile Include="src\AppException.cpp" />
+    <ClCompile Include="src\geometry\VertexFormat.cpp" />
+    <ClCompile Include="src\image\lodepng.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\PCH.h" />
+    <ClInclude Include="src\AppException.h" />
+    <ClInclude Include="src\App.h" />
+    <ClInclude Include="src\Util.h" />
+    <ClInclude Include="src\geometry\VertexFormat.h" />
+    <ClInclude Include="src\geometry\Color.h" />
+    <ClInclude Include="src\image\lodepng.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="shader\VertexShader.hlsl" />
+    <FxCompile Include="shader\PixelShader.hlsl" />
+  </ItemGroup>
+</Project>
