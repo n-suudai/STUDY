@@ -49,6 +49,11 @@ bool App::Initialize(HWND hWnd, const SIZE& clientSize, const SIZE& adjustSize)
     m_hGL = wglCreateContext(m_hDC);
     wglMakeCurrent(m_hDC, m_hGL);
 
+    std::string version = "OpenGL Version ";
+    version += reinterpret_cast<const char*>(glGetString(GL_VERSION));
+    version += "\n";
+    OutputDebugStringA(version.c_str());
+
     //ここからOpenGL関数（gl～）が使用可能になる	
 
     return true;
